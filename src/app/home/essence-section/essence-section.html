@@ -1,0 +1,79 @@
+<section id="esencia" class="essence">
+  <div class="essence__inner">
+    <div class="essence__header reveal" appReveal>
+      <p class="essence__eyebrow">Nuestra esencia</p>
+      <h2 class="essence__title">
+        La <span class="essence__title-accent">sensibilidad humana</span> como motor
+      </h2>
+    </div>
+
+    <div class="essence__grid">
+      <div class="essence__left reveal reveal--left" appReveal>
+        <div class="essence__media">
+          <div class="essence__image-frame">
+            <img [src]="imageSrc" alt="Cra. Lorena Agüera" class="essence__image" />
+          </div>
+          <div class="essence__author">
+            <h3 class="essence__author-name">Cra. Lorena Agüera</h3>
+            <p class="essence__author-role">Fundadora · Contadora Pública</p>
+          </div>
+        </div>
+
+        <blockquote class="essence__quote">
+          <p class="essence__quote-text">
+            "Creemos que detrás de cada número hay una persona, y detrás de cada empresa hay un
+            sueño."
+          </p>
+        </blockquote>
+      </div>
+
+      <div class="essence__right reveal reveal--right" appReveal>
+        <div class="essence__values">
+          @for (value of values; track value.label; let i = $index) {
+            <div
+              class="essence__value reveal"
+              appReveal
+              [style.transition-delay]="i * 100 + 'ms'"
+            >
+              <svg
+                class="essence__value-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                @switch (value.icon) {
+                  @case ('heart') {
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                  }
+                  @case ('eye') {
+                    <path d="M2.06 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.88 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.88 0" />
+                    <circle cx="12" cy="12" r="3" />
+                  }
+                  @case ('handshake') {
+                    <path d="m11 17 2 2a1 1 0 1 0 3-3" />
+                    <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
+                    <path d="m21 3 1 11h-2" />
+                    <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" />
+                    <path d="M3 4h8" />
+                  }
+                  @case ('lightbulb') {
+                    <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" />
+                    <path d="M9 18h6" />
+                    <path d="M10 22h4" />
+                  }
+                }
+              </svg>
+              <h4 class="essence__value-title">{{ value.label }}</h4>
+              <p class="essence__value-desc">{{ value.desc }}</p>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

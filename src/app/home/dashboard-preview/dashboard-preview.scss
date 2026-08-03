@@ -1,0 +1,235 @@
+.dashboard {
+  padding: 5rem 0;
+  background: var(--color-ghost-white);
+}
+
+.dashboard__inner {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+
+  @media (min-width: 768px) {
+    padding: 0 2.5rem;
+  }
+}
+
+.dashboard__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.dashboard__eyebrow {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--color-amber);
+  margin: 0 0 0.75rem;
+  font-family: var(--font-mono);
+}
+
+.dashboard__title {
+  font-family: var(--font-heading);
+  font-size: 1.875rem;
+  color: var(--color-ink);
+  max-width: 36rem;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    font-size: 2.25rem;
+  }
+}
+
+.dashboard__title-accent {
+  font-style: italic;
+  color: var(--color-vital-blue);
+}
+
+.dashboard__card {
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  padding: 1rem;
+
+  @media (min-width: 768px) {
+    padding: 1.5rem;
+  }
+}
+
+.dashboard__card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.dashboard__card-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dashboard__card-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background: #22c55e;
+}
+
+.dashboard__card-badge,
+.dashboard__card-brand {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dashboard__card-badge {
+  color: #9ca3af;
+}
+
+.dashboard__card-brand {
+  color: var(--color-amber);
+}
+
+.dashboard__kpis {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.dashboard__kpi {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #f3f4f6;
+  background: var(--color-ghost-white);
+
+  @media (min-width: 768px) {
+    padding: 1rem;
+  }
+}
+
+.dashboard__kpi-label,
+.dashboard__chart-label {
+  font-size: 10px;
+  font-family: var(--font-mono);
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.75rem;
+}
+
+.dashboard__kpi-value {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0.25rem 0 0;
+
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+.dashboard__kpi-value--green {
+  color: #16a34a;
+}
+
+.dashboard__kpi-value--blue {
+  color: var(--color-vital-blue);
+}
+
+.dashboard__kpi-value--amber {
+  color: var(--color-amber);
+}
+
+.dashboard__charts {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.dashboard__chart-card {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #f3f4f6;
+  background: var(--color-ghost-white);
+}
+
+.dashboard__bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+  height: 9rem;
+}
+
+.dashboard__bar-col {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.dashboard__bar-fill {
+  width: 100%;
+  max-width: 1.75rem;
+  background: var(--color-vital-blue);
+  border-radius: 4px 4px 0 0;
+}
+
+.dashboard__bar-month {
+  font-size: 10px;
+  color: #94a3b8;
+  font-family: var(--font-mono);
+}
+
+.dashboard__donut {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 9rem;
+}
+
+.dashboard__donut-svg {
+  height: 100%;
+  width: auto;
+}
+
+.dashboard__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+  justify-content: center;
+  margin-top: 0.25rem;
+}
+
+.dashboard__legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.dashboard__legend-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+}
+
+.dashboard__legend-label {
+  font-size: 10px;
+  color: #9ca3af;
+  font-family: var(--font-mono);
+}

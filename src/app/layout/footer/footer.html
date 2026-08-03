@@ -1,0 +1,44 @@
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <button
+        type="button"
+        class="footer__scroll-top"
+        (click)="scrollToTop()"
+        aria-label="Volver arriba"
+      >
+        <span class="footer__brand-mark">Ö</span>
+        <svg
+          class="footer__arrow"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="m5 12 7-7 7 7" />
+          <path d="M12 19V5" />
+        </svg>
+      </button>
+
+      <p class="footer__quote">
+        "La suerte es el resultado medible de la claridad y la acción."
+      </p>
+
+      <nav class="footer__nav">
+        @for (link of navLinks; track link.href) {
+          <a class="footer__nav-link" [href]="link.href">{{ link.label }}</a>
+        }
+      </nav>
+
+      <div class="footer__divider"></div>
+
+      <p class="footer__copyright">
+        © {{ year() }} ÕNN Consultoría. Todos los derechos reservados.
+      </p>
+    </div>
+  </div>
+</footer>

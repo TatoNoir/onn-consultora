@@ -1,0 +1,177 @@
+<section id="capacitacion" class="capacitacion">
+  <div class="capacitacion__inner">
+    <div class="capacitacion__header reveal" appReveal>
+      <p class="capacitacion__eyebrow">Capacitación</p>
+      <h2 class="capacitacion__title">
+        Potenciá a tu <span class="capacitacion__title-accent">equipo</span>
+      </h2>
+    </div>
+
+    <div class="capacitacion__grid">
+      <div class="capacitacion__modules">
+        @for (module of modules; track module.title; let i = $index) {
+          <div class="capacitacion__module-wrap reveal" appReveal [style.transition-delay]="i * 80 + 'ms'">
+            <div
+              class="capacitacion__module"
+              [class.capacitacion__module--recommended]="isRecommended(module.title)"
+            >
+              <div class="capacitacion__module-top">
+                <svg
+                  class="capacitacion__module-icon"
+                  [class.capacitacion__module-icon--recommended]="isRecommended(module.title)"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  @switch (module.icon) {
+                    @case ('file-text') {
+                      <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+                      <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                      <path d="M10 9H8" />
+                      <path d="M16 13H8" />
+                      <path d="M16 17H8" />
+                    }
+                    @case ('clock') {
+                      <circle cx="12" cy="12" r="10" />
+                      <polyline points="12 6 12 12 16 14" />
+                    }
+                    @case ('zap') {
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                    }
+                    @case ('users') {
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                      <circle cx="9" cy="7" r="4" />
+                      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    }
+                    @case ('book-open') {
+                      <path d="M12 7v14" />
+                      <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" />
+                    }
+                  }
+                </svg>
+                <span class="capacitacion__module-duration">{{ module.duration }}</span>
+              </div>
+              <h4 class="capacitacion__module-title">{{ module.title }}</h4>
+              <p class="capacitacion__module-desc">{{ module.desc }}</p>
+              @if (isRecommended(module.title)) {
+                <div class="capacitacion__module-badge">
+                  <svg
+                    class="capacitacion__module-badge-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="m9 12 2 2 4-4" />
+                  </svg>
+                  <span class="capacitacion__module-badge-text">Recomendado</span>
+                </div>
+              }
+            </div>
+          </div>
+        }
+      </div>
+
+      <div class="capacitacion__survey-wrap reveal reveal--right" appReveal>
+        <div class="capacitacion__survey">
+          <h3 class="capacitacion__survey-title">Detectá las necesidades de tu equipo</h3>
+          <p class="capacitacion__survey-subtitle">
+            Respondé estas preguntas rápidas y te sugerimos los módulos ideales.
+          </p>
+
+          <div class="capacitacion__questions">
+            @for (sq of surveyQuestions; track $index; let i = $index) {
+              <div class="capacitacion__question">
+                <p class="capacitacion__question-text">{{ sq.q }}</p>
+                <div class="capacitacion__question-actions">
+                  <button
+                    type="button"
+                    class="capacitacion__answer"
+                    [class.capacitacion__answer--si]="answers()[i] === 'si'"
+                    (click)="handleAnswer(i, 'si')"
+                  >
+                    Sí
+                  </button>
+                  <button
+                    type="button"
+                    class="capacitacion__answer"
+                    [class.capacitacion__answer--no]="answers()[i] === 'no'"
+                    (click)="handleAnswer(i, 'no')"
+                  >
+                    No
+                  </button>
+                </div>
+              </div>
+            }
+          </div>
+
+          @if (allAnswered() && !showResults()) {
+            <button
+              type="button"
+              class="capacitacion__cta"
+              (click)="showRecommended()"
+              [@fadeUp]
+            >
+              Ver módulos recomendados
+            </button>
+          }
+
+          @if (showResults() && recommended().length > 0) {
+            <div class="capacitacion__results" [@fadeUp]>
+              <p class="capacitacion__results-label">Módulos recomendados:</p>
+              <ul class="capacitacion__results-list">
+                @for (item of recommended(); track item) {
+                  <li class="capacitacion__results-item">
+                    <svg
+                      class="capacitacion__results-icon"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="m9 12 2 2 4-4" />
+                    </svg>
+                    {{ item }}
+                  </li>
+                }
+              </ul>
+              <a href="#contacto" class="capacitacion__results-link">
+                Solicitar cotización
+                <svg
+                  class="capacitacion__results-link-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

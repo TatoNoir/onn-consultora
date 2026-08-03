@@ -1,0 +1,316 @@
+.termometro {
+  padding: 5rem 0;
+  background: var(--color-ghost-white);
+}
+
+.termometro__inner {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+
+  @media (min-width: 768px) {
+    padding: 0 2.5rem;
+  }
+}
+
+.termometro__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.termometro__eyebrow {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--color-amber);
+  margin: 0 0 0.75rem;
+  font-family: var(--font-mono);
+}
+
+.termometro__title {
+  font-family: var(--font-heading);
+  font-size: 1.875rem;
+  color: var(--color-ink);
+  max-width: 36rem;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    font-size: 2.25rem;
+  }
+}
+
+.termometro__title-accent {
+  font-style: italic;
+  color: var(--color-vital-blue);
+}
+
+.termometro__subtitle {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0.75rem auto 0;
+  max-width: 28rem;
+  font-family: var(--font-body);
+  line-height: 1.7;
+}
+
+.termometro__box {
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+.termometro__view {
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+
+  @media (min-width: 768px) {
+    padding: 2rem;
+  }
+
+  &--center {
+    text-align: center;
+  }
+}
+
+.termometro__intro-icon {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 9999px;
+  border: 2px solid rgba(0, 90, 238, 0.2);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.termometro__intro-icon-svg {
+  width: 2rem;
+  height: 2rem;
+  color: var(--color-vital-blue);
+}
+
+.termometro__start {
+  padding: 0.75rem 2rem;
+  background: var(--color-vital-blue);
+  color: #fff;
+  border: 0;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 300ms;
+
+  &:hover {
+    background: #1d4ed8;
+  }
+}
+
+.termometro__quiz-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.termometro__step-counter {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--color-amber);
+  flex-shrink: 0;
+}
+
+.termometro__progress {
+  flex: 1;
+  margin: 0 1rem;
+  height: 0.25rem;
+  background: #f3f4f6;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.termometro__progress-fill {
+  height: 100%;
+  background: var(--color-vital-blue);
+  border-radius: 9999px;
+  transition: width 300ms;
+}
+
+.termometro__area {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+.termometro__question {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--color-ink);
+  margin: 0 0 2rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+.termometro__options {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+
+.termometro__option {
+  padding: 0.75rem 0.25rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  background: transparent;
+  text-align: center;
+  cursor: pointer;
+  transition: all 300ms;
+
+  &:hover {
+    border-color: rgba(0, 90, 238, 0.4);
+  }
+
+  &--selected {
+    border-color: var(--color-vital-blue);
+    background: rgba(0, 90, 238, 0.05);
+    color: var(--color-vital-blue);
+  }
+}
+
+.termometro__option-value {
+  display: block;
+  font-size: 1.125rem;
+  font-family: var(--font-mono);
+  line-height: 1.25;
+}
+
+.termometro__option-label {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--font-mono);
+}
+
+.termometro__back {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  color: #9ca3af;
+  font-family: var(--font-mono);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: color 300ms;
+
+  &:hover {
+    color: #4b5563;
+  }
+}
+
+.termometro__back-icon {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.termometro__result-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.termometro__result-eyebrow {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-amber);
+  font-family: var(--font-mono);
+}
+
+.termometro__result-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-ink);
+  margin: 0.5rem 0 0;
+}
+
+.termometro__result-score {
+  font-family: var(--font-mono);
+  font-size: 1.875rem;
+  color: var(--color-vital-blue);
+  font-weight: 700;
+  margin: 0.5rem 0 0;
+}
+
+.termometro__chart {
+  width: 100%;
+  height: 15rem;
+  display: block;
+}
+
+.termometro__result-actions {
+  text-align: center;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.termometro__result-note {
+  font-size: 0.75rem;
+  color: #6b7280;
+  max-width: 24rem;
+  margin: 0 auto;
+  font-family: var(--font-body);
+  line-height: 1.7;
+}
+
+.termometro__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  background: var(--color-amber);
+  color: #fff;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 300ms;
+
+  &:hover {
+    background: #eab308;
+  }
+}
+
+.termometro__cta-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.termometro__reset {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  font-family: var(--font-mono);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: color 300ms;
+
+  &:hover {
+    color: #4b5563;
+  }
+}

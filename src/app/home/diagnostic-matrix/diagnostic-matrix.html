@@ -1,0 +1,138 @@
+<section id="diagnostico" class="diagnostic">
+  <div class="diagnostic__inner">
+    <div class="diagnostic__header reveal" appReveal>
+      <p class="diagnostic__eyebrow">ÕNN ES PARA VOS SI…</p>
+      <h2 class="diagnostic__title">
+        ¿Cuál es tu <span class="diagnostic__title-accent">desafío</span> hoy?
+      </h2>
+    </div>
+
+    <div class="diagnostic__grid">
+      <div class="diagnostic__list">
+        @for (challenge of challenges; track challenge.id; let i = $index) {
+          <div class="diagnostic__row reveal" appReveal [style.transition-delay]="i * 80 + 'ms'">
+            <button
+              type="button"
+              class="diagnostic__item"
+              [class.diagnostic__item--active]="activeId() === challenge.id"
+              (click)="toggleActive(challenge.id)"
+            >
+              <div class="diagnostic__item-row">
+                <div
+                  class="diagnostic__item-icon"
+                  [class.diagnostic__item-icon--active]="activeId() === challenge.id"
+                >
+                  <svg
+                    class="diagnostic__item-icon-svg"
+                    [class.diagnostic__item-icon-svg--active]="activeId() === challenge.id"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    @switch (challenge.id) {
+                      @case (1) {
+                        <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+                        <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                        <path d="m14.5 12.5-5 5" />
+                        <path d="m9.5 12.5 5 5" />
+                      }
+                      @case (2) {
+                        <polyline points="22 17 13.5 8.5 8.5 13.5 2 7" />
+                        <polyline points="16 17 22 17 22 11" />
+                      }
+                      @case (3) {
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                      }
+                      @case (4) {
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                      }
+                      @case (5) {
+                        <path d="M3 3v16a2 2 0 0 0 2 2h16" />
+                        <path d="M7 16v-3" />
+                        <path d="M11 16v-8" />
+                        <path d="M15 16v-5" />
+                        <path d="M19 16V4" />
+                      }
+                    }
+                  </svg>
+                </div>
+                <span
+                  class="diagnostic__item-pain"
+                  [class.diagnostic__item-pain--active]="activeId() === challenge.id"
+                >
+                  {{ challenge.pain }}
+                </span>
+                <svg
+                  class="diagnostic__item-arrow"
+                  [class.diagnostic__item-arrow--active]="activeId() === challenge.id"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </div>
+              @if (activeId() === challenge.id) {
+                <p class="diagnostic__item-desc" [@expandCollapse]>
+                  {{ challenge.painDesc }}
+                </p>
+              }
+            </button>
+          </div>
+        }
+      </div>
+
+      <div class="diagnostic__detail">
+        @if (active(); as active) {
+          <div class="diagnostic__card" [@cardSwitch]>
+            <div class="diagnostic__card-header">
+              <div class="diagnostic__card-dot"></div>
+              <span class="diagnostic__card-label">Solución ÕNN</span>
+            </div>
+            <h3 class="diagnostic__card-title">{{ active.solution }}</h3>
+            <p class="diagnostic__card-text">{{ active.solutionDesc }}</p>
+            <a class="diagnostic__card-link" href="#contacto">
+              Hablemos de esto
+              <svg
+                class="diagnostic__card-link-arrow"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        } @else {
+          <div class="diagnostic__placeholder" [@fadeSwitch]>
+            <div class="diagnostic__placeholder-circle">
+              <span class="diagnostic__placeholder-mark">?</span>
+            </div>
+            <p class="diagnostic__placeholder-text">Seleccioná un desafío para ver la solución</p>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

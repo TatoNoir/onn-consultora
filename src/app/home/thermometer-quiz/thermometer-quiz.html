@@ -1,0 +1,170 @@
+<section id="termometro" class="termometro">
+  <div class="termometro__inner">
+    <div class="termometro__header reveal" appReveal>
+      <p class="termometro__eyebrow">Test gratuito</p>
+      <h2 class="termometro__title">
+        Termómetro de <span class="termometro__title-accent">Activación</span> Empresarial
+      </h2>
+      <p class="termometro__subtitle">
+        7 preguntas rápidas para descubrir qué tan "encendida" está tu empresa.
+      </p>
+    </div>
+
+    <div class="termometro__box">
+      @if (step() === -1 && !submitted()) {
+        <div class="termometro__view termometro__view--center" [@viewEnter]>
+          <div class="termometro__intro-icon">
+            <svg
+              class="termometro__intro-icon-svg"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="12" x2="12" y1="20" y2="10" />
+              <line x1="18" x2="18" y1="20" y2="4" />
+              <line x1="6" x2="6" y1="20" y2="16" />
+            </svg>
+          </div>
+          <button type="button" class="termometro__start" (click)="start()">Comenzar test</button>
+        </div>
+      }
+
+      @if (step() >= 0 && !submitted()) {
+        <div class="termometro__view" [@slideIn]="step()">
+          <div class="termometro__quiz-top">
+            <span class="termometro__step-counter">{{ step() + 1 }} / {{ questions.length }}</span>
+            <div class="termometro__progress">
+              <div class="termometro__progress-fill" [style.width]="progressWidth()"></div>
+            </div>
+            <span class="termometro__area">{{ questions[step()].area }}</span>
+          </div>
+
+          <h3 class="termometro__question">{{ questions[step()].q }}</h3>
+
+          <div class="termometro__options">
+            @for (opt of options; track opt.value) {
+              <button
+                type="button"
+                class="termometro__option"
+                [class.termometro__option--selected]="answers()[step()] === opt.value"
+                (click)="handleAnswer(opt.value)"
+              >
+                <span class="termometro__option-value">{{ opt.value }}</span>
+                <span class="termometro__option-label">{{ opt.label }}</span>
+              </button>
+            }
+          </div>
+
+          @if (step() > 0) {
+            <button type="button" class="termometro__back" (click)="goBack()">
+              <svg
+                class="termometro__back-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m12 19-7-7 7-7" />
+                <path d="M19 12H5" />
+              </svg>
+              Anterior
+            </button>
+          }
+        </div>
+      }
+
+      @if (submitted()) {
+        <div class="termometro__view" [@scaleIn]>
+          <div class="termometro__result-header">
+            <span class="termometro__result-eyebrow">Tu resultado</span>
+            <h3 class="termometro__result-title">{{ scoreLabel() }}</h3>
+            <p class="termometro__result-score">{{ avgScore().toFixed(1) }} / 5.0</p>
+          </div>
+
+          <svg
+            class="termometro__chart"
+            viewBox="0 0 380 260"
+            role="img"
+            aria-label="Gráfico radar de resultados"
+          >
+            @for (level of gridLevelsArray; track level) {
+              <polygon
+                [attr.points]="gridLevels(level)"
+                fill="none"
+                stroke="rgba(0,0,0,0.06)"
+              />
+            }
+            @for (axis of axisLines(); track $index) {
+              <line
+                [attr.x1]="axis.x1"
+                [attr.y1]="axis.y1"
+                [attr.x2]="axis.x2"
+                [attr.y2]="axis.y2"
+                stroke="rgba(0,0,0,0.06)"
+              />
+            }
+            <polygon
+              [attr.points]="radarPoints()"
+              fill="#005AEE"
+              fill-opacity="0.15"
+              stroke="#005AEE"
+              stroke-width="2"
+              fill-rule="nonzero"
+            />
+            @for (label of labels(); track label.text) {
+              <text
+                [attr.x]="label.x"
+                [attr.y]="label.y"
+                [attr.text-anchor]="label.anchor"
+                fill="#64748B"
+                font-size="11"
+                font-family="var(--font-mono)"
+              >
+                {{ label.text }}
+              </text>
+            }
+          </svg>
+
+          <div class="termometro__result-actions">
+            <p class="termometro__result-note">
+              Agendá una sesión de diagnóstico gratuita con la Cra. Lorena Agüera para analizar tu
+              resultado.
+            </p>
+            <a
+              class="termometro__cta"
+              href="https://wa.me/5491100000000?text=Hola%2C%20hice%20el%20test%20de%20activación%20y%20me%20gustaría%20agendar%20una%20sesión."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Agendar sesión gratuita
+              <svg
+                class="termometro__cta-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </a>
+            <button type="button" class="termometro__reset" (click)="reset()">Repetir test</button>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

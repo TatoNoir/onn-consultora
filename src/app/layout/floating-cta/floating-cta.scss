@@ -1,0 +1,47 @@
+.floating-cta {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 9999px;
+  background: #16a34a;
+  color: #fff;
+  box-shadow:
+    0 10px 15px -3px rgba(187, 247, 208, 0.5),
+    0 4px 6px -4px rgba(187, 247, 208, 0.5);
+  text-decoration: none;
+  transition:
+    background-color 300ms,
+    transform 150ms;
+
+  &:hover {
+    background: #15803d;
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.floating-cta__icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.floating-cta__label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  display: none;
+
+  @media (min-width: 640px) {
+    display: inline;
+  }
+}

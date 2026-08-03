@@ -1,0 +1,121 @@
+.footer {
+  padding: 4rem 0;
+  border-top: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+.footer__inner {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+
+  @media (min-width: 768px) {
+    padding: 0 2.5rem;
+  }
+}
+
+.footer__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer__scroll-top {
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 9999px;
+  border: 2px solid rgba(234, 179, 8, 0.4);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  transition:
+    transform 150ms,
+    border-color 300ms;
+
+  &:hover {
+    border-color: var(--color-amber);
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+.footer__brand-mark {
+  position: absolute;
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  color: var(--color-amber);
+  transition: opacity 300ms;
+}
+
+.footer__scroll-top:hover .footer__brand-mark {
+  opacity: 0;
+}
+
+.footer__arrow {
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--color-amber);
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+.footer__scroll-top:hover .footer__arrow {
+  opacity: 1;
+}
+
+.footer__quote {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-style: italic;
+  color: #9ca3af;
+  max-width: 28rem;
+  margin: 0;
+}
+
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.footer__nav-link {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--font-mono);
+  text-decoration: none;
+  transition: color 300ms;
+
+  &:hover {
+    color: var(--color-ink);
+  }
+}
+
+.footer__divider {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f3f4f6;
+  width: 100%;
+}
+
+.footer__copyright {
+  font-size: 10px;
+  color: #d1d5db;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: var(--font-mono);
+  margin: 0;
+}

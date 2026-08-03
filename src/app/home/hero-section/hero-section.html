@@ -1,0 +1,49 @@
+<section id="hero" class="hero">
+  <div class="hero__inner">
+    <div class="hero__grid">
+      <div class="hero__content" [@fadeUp]>
+        <h1 class="hero__title">
+          <span class="hero__title--blue">ÕNN EMPRESA ACTIVA</span>
+          <br />
+          TU EMPRESA CRECE CON DECISIONES.
+          <br />
+          <span class="hero__title--amber">ÕNN TE ACOMPAÑA PARA QUE SEAN LAS MEJORES.</span>
+        </h1>
+
+        <div class="hero__accent">
+          <div class="hero__accent-bar"></div>
+          <p class="hero__accent-text">
+            Dirección administrativa y financiera externa para tu Pyme. Õnn trabaja junto a PyMEs para
+            fortalecer la gestión, acompañar las decisiones y hacer que el progreso sea sostenible sin
+            incorporar una gerencia de tiempo completo. Un destacado trabajo en equipo para llevar tu
+            empresa a lo más alto.
+          </p>
+        </div>
+
+        <div class="hero__actions">
+          <a href="#termometro" class="hero__cta hero__cta--primary">Agendá una reunión</a>
+          <a href="#metodologia" class="hero__cta hero__cta--outline">Enterate cómo</a>
+        </div>
+      </div>
+
+      <div class="hero__switch" [@scaleIn]>
+        <div
+          class="hero__circle"
+          [class.hero__circle--on]="activated()"
+          (click)="toggle()"
+        >
+          <span class="hero__circle-letter" [class.hero__circle-letter--on]="activated()">Ö</span>
+        </div>
+
+        <p class="hero__hint">hacé clic para experimentar<br />la transformación</p>
+
+        <div class="hero__pill" (click)="toggle()">
+          <div class="hero__pill-track" [class.hero__pill-track--on]="activated()">
+            <div class="hero__pill-knob" [class.hero__pill-knob--on]="activated()"></div>
+          </div>
+          <span class="hero__pill-label">{{ activated() ? 'ON' : 'OFF' }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,39 @@
+<nav class="navbar">
+  <div class="navbar__inner">
+    <a href="#hero" class="navbar__brand">
+      <span class="navbar__brand-accent">Ö</span>NN
+    </a>
+
+    <div class="navbar__nav">
+      @for (item of navItems; track item.href) {
+        <a class="navbar__link" [href]="item.href">{{ item.label }}</a>
+      }
+    </div>
+
+    <a href="#termometro" class="navbar__cta">Activá tu empresa</a>
+
+    <button class="navbar__toggle" type="button" (click)="isOpen.set(true)" aria-label="Abrir menú">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="4" x2="20" y1="6" y2="6" />
+        <line x1="4" x2="20" y1="12" y2="12" />
+        <line x1="4" x2="20" y1="18" y2="18" />
+      </svg>
+    </button>
+  </div>
+</nav>
+
+@if (isOpen()) {
+  <div class="mobile-menu" [@overlay]>
+    <button class="mobile-menu__close" type="button" (click)="isOpen.set(false)" aria-label="Cerrar menú">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 6 6 18" />
+        <path d="m6 6 12 12" />
+      </svg>
+    </button>
+    <div class="mobile-menu__links" [@staggerLinks]>
+      @for (item of navItems; track item.href) {
+        <a class="mobile-menu__link" [href]="item.href" (click)="isOpen.set(false)">{{ item.label }}</a>
+      }
+    </div>
+  </div>
+}
