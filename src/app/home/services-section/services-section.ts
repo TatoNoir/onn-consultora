@@ -34,9 +34,11 @@ interface Service {
 export class ServicesSection {
   protected readonly painFilters: PainFilter[] = [
     { id: 'all', label: 'Todos' },
-    { id: 'order', label: '¿Necesitás ordenar la casa?' },
-    { id: 'future', label: '¿Necesitás proyectar el futuro?' },
-    { id: 'team', label: '¿Necesitás preparar a tu equipo?' },
+    { id: 'numbers', label: 'Entender mejor los números' },
+    { id: 'financing', label: 'Financiamiento para tus proyectos' },
+    { id: 'decide', label: 'Información para decidir' },
+    { id: 'order', label: 'Ordenar la administración' },
+    { id: 'team', label: 'Profesionalizar la empresa' },
   ];
 
   protected readonly services: Service[] = [
@@ -64,7 +66,7 @@ export class ServicesSection {
     {
       id: 'financiero',
       title: 'Asesoramiento Financiero',
-      tags: ['future'],
+      tags: ['numbers'],
       items: [
         'Armado de flujo de fondos (Free CashFlow)',
         'Presupuestos y proyecciones',
@@ -74,7 +76,7 @@ export class ServicesSection {
     {
       id: 'finanzas',
       title: 'Gestión Financiera',
-      tags: ['future'],
+      tags: ['financing'],
       items: [
         'Herramientas financieras a la medida de tu Pyme',
         'Activación de financiamiento en Bancos',
@@ -85,7 +87,7 @@ export class ServicesSection {
     {
       id: 'estrategia',
       title: 'Decisiones Estratégicas',
-      tags: ['future'],
+      tags: ['decide'],
       items: [
         'Alineación operativa con objetivos',
         'Tableros de control y KPI´s',
@@ -96,7 +98,7 @@ export class ServicesSection {
     {
       id: 'soporte',
       title: 'Formación y capacitación',
-      tags: ['team', 'order'],
+      tags: ['team'],
       items: [
         'Capacitación en gestión para equipos',
         'Diseño de planes de acción',
