@@ -59,7 +59,6 @@ export class ServicesSection {
         'Auditorías internas y externas',
         'Registración y control contable',
         'Cumplimiento fiscal y normativo',
-        'Reporting financiero periódico',
       ],
     },
     {
@@ -67,10 +66,20 @@ export class ServicesSection {
       title: 'Asesoramiento Financiero',
       tags: ['future'],
       items: [
+        'Armado de flujo de fondos (Free CashFlow)',
         'Presupuestos y proyecciones',
-        'Análisis de rentabilidad',
-        'Planificación de flujo de fondos',
-        'Evaluación de inversiones',
+        'Estrategias sobre cobros y pagos',
+      ],
+    },
+    {
+      id: 'finanzas',
+      title: 'Gestión Financiera',
+      tags: ['future'],
+      items: [
+        'Herramientas financieras a la medida de tu Pyme',
+        'Activación de financiamiento en Bancos',
+        'Activación de financiamiento en Mercado de Capitales',
+        'Armado de legajos para Bancos y SGR´s',
       ],
     },
     {
@@ -78,21 +87,21 @@ export class ServicesSection {
       title: 'Decisiones Estratégicas',
       tags: ['future'],
       items: [
-        'Tableros de control y KPI',
-        'Análisis de escenarios',
-        'Estrategia de crecimiento',
         'Alineación operativa con objetivos',
+        'Tableros de control y KPI´s',
+        'Análisis de rentabilidad',
+        'Análisis de escenarios',
       ],
     },
     {
       id: 'soporte',
-      title: 'Soporte y Capacitación',
+      title: 'Formación y capacitación',
       tags: ['team', 'order'],
       items: [
         'Capacitación en gestión para equipos',
-        'Entrenamiento en herramientas digitales',
+        'Diseño de planes de acción',
         'Programas de mejora continua',
-        'Soporte técnico permanente',
+        'Soporte profesional permanente',
       ],
     },
   ];
