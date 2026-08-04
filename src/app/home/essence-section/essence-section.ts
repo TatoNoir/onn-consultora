@@ -8,5 +8,5 @@ import { RevealDirective } from '../../shared/reveal.directive';
   styleUrl: './essence-section.scss',
 })
 export class EssenceSection {
-  protected readonly imageSrc = '/lorena_aguera.jpeg';
+  protected readonly imageSrc = 'lorena_aguera.jpeg';
 }
