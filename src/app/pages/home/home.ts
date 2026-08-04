@@ -10,6 +10,7 @@ import { HeroSection } from '../../home/hero-section/hero-section';
 import { MethodologyTimeline } from '../../home/methodology-timeline/methodology-timeline';
 import { ThermometerQuiz } from '../../home/thermometer-quiz/thermometer-quiz';
 import { ServicesSection } from '../../home/services-section/services-section';
+import { WhyOnnSection } from '../../home/why-onn-section/why-onn-section';
 import { Navbar } from '../../layout/navbar/navbar';
 
 @Component({
@@ -18,6 +19,7 @@ import { Navbar } from '../../layout/navbar/navbar';
     Navbar,
     HeroSection,
     DiagnosticMatrix,
+    WhyOnnSection,
     ServicesSection,
     DashboardPreview,
     MethodologyTimeline,

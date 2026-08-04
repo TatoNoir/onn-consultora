@@ -134,5 +134,87 @@
         }
       </div>
     </div>
+
+    <div class="diagnostic__situations">
+      <h3 class="diagnostic__situations-title reveal" appReveal>
+        ¿Te identificás con alguna de estas
+        <span class="diagnostic__title-accent">situaciones</span>?
+      </h3>
+
+      <div class="diagnostic__situations-list">
+        @for (situation of situations; track $index; let i = $index) {
+          <button
+            type="button"
+            class="diagnostic__situation reveal"
+            appReveal
+            [class.diagnostic__situation--active]="selected().includes(i)"
+            (click)="toggleSituation(i)"
+            [style.transition-delay]="i * 80 + 'ms'"
+          >
+            <div
+              class="diagnostic__situation-check"
+              [class.diagnostic__situation-check--active]="selected().includes(i)"
+            >
+              @if (selected().includes(i)) {
+                <svg
+                  class="diagnostic__situation-check-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+              }
+            </div>
+            <span
+              class="diagnostic__situation-text"
+              [class.diagnostic__situation-text--active]="selected().includes(i)"
+            >
+              {{ situation }}
+            </span>
+          </button>
+        }
+      </div>
+
+      <div
+        class="diagnostic__summary reveal"
+        appReveal
+        [class.diagnostic__summary--highlighted]="count() > 1"
+      >
+        <div class="diagnostic__summary-row">
+          <p class="diagnostic__summary-text">
+            Si te identificaste en más de una situación, desde
+            <span class="diagnostic__summary-strong">Õnn</span> puedo ayudarte.
+          </p>
+          <a class="diagnostic__summary-cta" href="#contacto">
+            Contacto
+            <svg
+              class="diagnostic__summary-cta-arrow"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+        @if (count() > 0) {
+          <p class="diagnostic__summary-count">
+            {{ count() }} {{ count() === 1 ? 'situación marcada' : 'situaciones marcadas' }}
+          </p>
+        }
+      </div>
+    </div>
   </div>
 </section>

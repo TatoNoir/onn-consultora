@@ -96,4 +96,22 @@ export class DiagnosticMatrix {
   protected toggleActive(id: number): void {
     this.activeId.update((current) => (current === id ? null : id));
   }
+
+  protected readonly situations: string[] = [
+    'La administración y las finanzas me quitan tiempo que preferiría dedicar a otras áreas de la empresa.',
+    'La toma de decisiones diarias depende, en su mayoría, de mí.',
+    'Siento que tomo decisiones importantes sin tener apoyo en información clave.',
+    'Mi empresa creció, pero la organización no acompañó este crecimiento.',
+    'Quiero profesionalizar la gestión sin incorporar una gerencia permanente por lo que implica.',
+  ];
+
+  protected readonly selected = signal<number[]>([]);
+
+  protected readonly count = computed(() => this.selected().length);
+
+  protected toggleSituation(index: number): void {
+    this.selected.update((prev) =>
+      prev.includes(index) ? prev.filter((x) => x !== index) : [...prev, index],
+    );
+  }
 }
