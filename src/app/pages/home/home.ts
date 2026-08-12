@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CapacitacionSection } from '../../home/capacitacion-section/capacitacion-section';
 import { ContactSection } from '../../home/contact-section/contact-section';
-import { DashboardPreview } from '../../home/dashboard-preview/dashboard-preview';
 import { DiagnosticMatrix } from '../../home/diagnostic-matrix/diagnostic-matrix';
 import { EssenceSection } from '../../home/essence-section/essence-section';
 import { FloatingCta } from '../../layout/floating-cta/floating-cta';
@@ -21,7 +20,6 @@ import { Navbar } from '../../layout/navbar/navbar';
     DiagnosticMatrix,
     WhyOnnSection,
     ServicesSection,
-    DashboardPreview,
     MethodologyTimeline,
     EssenceSection,
     CapacitacionSection,

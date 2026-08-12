@@ -55,14 +55,27 @@
   font-family: var(--font-body);
 }
 
-.methodology__list {
+.methodology__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0 3rem;
+  gap: 3rem;
   align-items: start;
 
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  @media (min-width: 1024px) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+    gap: 4rem;
+  }
+}
+
+.methodology__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.methodology__widget {
+  @media (min-width: 1024px) {
+    position: sticky;
+    top: 2rem;
   }
 }
 
@@ -117,10 +130,6 @@
   min-height: 50px;
   background: #e5e7eb;
   margin-top: 0.5rem;
-
-  @media (min-width: 768px) {
-    display: none;
-  }
 }
 
 .methodology__content {

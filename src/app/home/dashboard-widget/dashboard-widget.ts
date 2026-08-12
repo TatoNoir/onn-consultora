@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { RevealDirective } from '../../shared/reveal.directive';
+import { Component, input } from '@angular/core';
 
 interface BarDatum {
   month: string;
@@ -17,17 +16,18 @@ interface PieDatum {
 const PIE_RADIUS = 46.5;
 
 @Component({
-  selector: 'app-dashboard-preview',
-  imports: [RevealDirective],
-  templateUrl: './dashboard-preview.html',
-  styleUrl: './dashboard-preview.scss',
+  selector: 'app-dashboard-widget',
+  templateUrl: './dashboard-widget.html',
+  styleUrl: './dashboard-widget.scss',
 })
-export class DashboardPreview {
+export class DashboardWidget {
+  readonly compact = input(false);
+
   protected readonly kpis = [
-    { label: 'Rentabilidad', value: '+18.5%', className: 'dashboard__kpi-value--green' },
-    { label: 'Costos/Ventas', value: '62.3%', className: 'dashboard__kpi-value--blue' },
-    { label: 'Liquidez', value: '1.45', className: 'dashboard__kpi-value--amber' },
-    { label: 'Procesos OK', value: '87%', className: 'dashboard__kpi-value--green' },
+    { label: 'Rentabilidad', value: '+18.5%', className: 'dashboard-widget__kpi-value--green' },
+    { label: 'Costos/Ventas', value: '62.3%', className: 'dashboard-widget__kpi-value--blue' },
+    { label: 'Liquidez', value: '1.45', className: 'dashboard-widget__kpi-value--amber' },
+    { label: 'Procesos OK', value: '87%', className: 'dashboard-widget__kpi-value--green' },
   ];
 
   protected readonly bars: BarDatum[] = (() => {

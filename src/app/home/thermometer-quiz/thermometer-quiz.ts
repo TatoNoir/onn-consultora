@@ -1,3 +1,4 @@
+import { DecimalPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { RevealDirective } from '../../shared/reveal.directive';
@@ -29,7 +30,7 @@ function polarPoint(angleIndex: number, total: number, radius: number): { x: num
 
 @Component({
   selector: 'app-thermometer-quiz',
-  imports: [RevealDirective],
+  imports: [RevealDirective, DecimalPipe],
   templateUrl: './thermometer-quiz.html',
   styleUrl: './thermometer-quiz.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

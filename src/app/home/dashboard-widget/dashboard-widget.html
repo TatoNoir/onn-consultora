@@ -1,0 +1,67 @@
+<div
+  class="dashboard-widget"
+  [class.dashboard-widget--compact]="compact()"
+>
+  <div class="dashboard-widget__head">
+    <div class="dashboard-widget__status">
+      <span class="dashboard-widget__dot"></span>
+      <span class="dashboard-widget__badge">TABLERO DE CONTROL — DEMO</span>
+    </div>
+    <span class="dashboard-widget__brand">ÕNN Dashboard</span>
+  </div>
+
+  <div class="dashboard-widget__kpis">
+    @for (kpi of kpis; track kpi.label) {
+      <div class="dashboard-widget__kpi">
+        <p class="dashboard-widget__kpi-label">{{ kpi.label }}</p>
+        <p class="dashboard-widget__kpi-value" [class]="'dashboard-widget__kpi-value ' + kpi.className">
+          {{ kpi.value }}
+        </p>
+      </div>
+    }
+  </div>
+
+  <div class="dashboard-widget__charts">
+    <div class="dashboard-widget__chart-card">
+      <p class="dashboard-widget__chart-label">Evolución mensual</p>
+      <div class="dashboard-widget__bars" role="img" aria-label="Evolución mensual">
+        @for (bar of bars; track bar.month) {
+          <div class="dashboard-widget__bar-col" title="{{ bar.month }}: {{ bar.value }}">
+            <div class="dashboard-widget__bar-fill" [style.height.%]="bar.heightPct"></div>
+            <span class="dashboard-widget__bar-month">{{ bar.month }}</span>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="dashboard-widget__chart-card">
+      <p class="dashboard-widget__chart-label">Distribución por área</p>
+      <div class="dashboard-widget__donut">
+        <svg class="dashboard-widget__donut-svg" viewBox="0 0 140 140" role="img" aria-label="Distribución por área">
+          @for (segment of pie; track segment.name) {
+            <circle
+              class="dashboard-widget__donut-circle"
+              cx="70"
+              cy="70"
+              r="46.5"
+              fill="none"
+              stroke-width="23"
+              transform="rotate(-90 70 70)"
+              [attr.stroke]="segment.color"
+              [attr.stroke-dasharray]="segment.dashArray"
+              [attr.stroke-dashoffset]="segment.dashOffset"
+            />
+          }
+        </svg>
+      </div>
+      <div class="dashboard-widget__legend">
+        @for (segment of pie; track segment.name) {
+          <div class="dashboard-widget__legend-item">
+            <span class="dashboard-widget__legend-dot" [style.background]="segment.color"></span>
+            <span class="dashboard-widget__legend-label">{{ segment.name }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

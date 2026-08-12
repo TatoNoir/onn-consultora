@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RevealDirective } from '../../shared/reveal.directive';
+import { DashboardWidget } from '../dashboard-widget/dashboard-widget';
 
 interface Step {
   num: string;
@@ -10,7 +11,7 @@ interface Step {
 
 @Component({
   selector: 'app-methodology-timeline',
-  imports: [RevealDirective],
+  imports: [RevealDirective, DashboardWidget],
   templateUrl: './methodology-timeline.html',
   styleUrl: './methodology-timeline.scss',
 })

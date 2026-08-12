@@ -6,7 +6,7 @@
         Termómetro de <span class="termometro__title-accent">Activación</span> Empresarial
       </h2>
       <p class="termometro__subtitle">
-        7 preguntas rápidas para descubrir qué tan "encendida" está tu empresa.
+        7 preguntas rápidas para descubrir qué tan activa está tu empresa.
       </p>
     </div>
 
@@ -87,7 +87,7 @@
           <div class="termometro__result-header">
             <span class="termometro__result-eyebrow">Tu resultado</span>
             <h3 class="termometro__result-title">{{ scoreLabel() }}</h3>
-            <p class="termometro__result-score">{{ avgScore().toFixed(1) }} / 5.0</p>
+            <p class="termometro__result-score">{{ (avgScore() / 5) * 100 | number: '1.0-0' }}%</p>
           </div>
 
           <svg
