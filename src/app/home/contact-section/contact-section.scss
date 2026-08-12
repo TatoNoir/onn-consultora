@@ -98,6 +98,22 @@
     background: rgba(234, 179, 8, 0.1);
   }
 
+  &--linkedin {
+    background: #eff6ff;
+
+    &:hover {
+      background: #dbeafe;
+    }
+  }
+
+  &--instagram {
+    background: #fdf2f8;
+
+    &:hover {
+      background: #fce7f3;
+    }
+  }
+
   &--gray {
     background: #f3f4f6;
   }
@@ -117,6 +133,14 @@
 
   &--amber {
     color: var(--color-amber);
+  }
+
+  &--linkedin {
+    color: #0a66c2;
+  }
+
+  &--instagram {
+    color: #db2777;
   }
 
   &--gray {
