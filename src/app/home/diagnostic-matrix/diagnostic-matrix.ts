@@ -41,13 +41,13 @@ interface Challenge {
 export class DiagnosticMatrix {
   protected readonly challenges: Challenge[] = [
     {
-      id: 1,
-      pain: 'Desorden en papeles y registros',
+      id: 4,
+      pain: 'Pierdo tiempo en tareas operativas',
       painDesc:
-        'Documentos perdidos, información duplicada, procesos manuales que consumen tiempo valioso.',
-      solution: 'Digitalización y entornos de control',
+        'Tu día se va en apagar incendios. No hay tiempo para planificar ni pensar estratégicamente.',
+      solution: 'Asesoramiento administrativo integral',
       solutionDesc:
-        'Sistemas ordenados, flujos digitalizados y control documental que libera tu tiempo para lo que importa.',
+        'Reorganización de procesos y delegación efectiva para que vuelvas a liderar tu empresa.',
     },
     {
       id: 2,
@@ -59,6 +59,15 @@ export class DiagnosticMatrix {
         'Indicadores claros que te muestran la salud real de tu empresa. Decisiones basadas en datos, no en intuición.',
     },
     {
+      id: 5,
+      pain: 'No puedo proyectar financieramente',
+      painDesc:
+        'Sin presupuestos, sin proyecciones, sin un mapa claro de hacia dónde va tu empresa.',
+      solution: 'Asesoramiento financiero y decisiones estratégicas',
+      solutionDesc:
+        'Planificación financiera, presupuestos y análisis de escenarios que convierten la incertidumbre en rumbo claro.',
+    },
+    {
       id: 3,
       pain: 'Mi equipo no está capacitado',
       painDesc:
@@ -68,22 +77,13 @@ export class DiagnosticMatrix {
         'Formación práctica que transforma equipos: desde ordenamiento documental hasta herramientas de gestión del tiempo.',
     },
     {
-      id: 4,
-      pain: 'Pierdo tiempo en tareas operativas',
+      id: 1,
+      pain: 'Desorden en papeles y registros',
       painDesc:
-        'Tu día se va en apagar incendios. No hay tiempo para planificar ni pensar estratégicamente.',
-      solution: 'Asesoramiento administrativo integral',
+        'Documentos perdidos, información duplicada, procesos manuales que consumen tiempo valioso.',
+      solution: 'Digitalización y entornos de control',
       solutionDesc:
-        'Reorganización de procesos y delegación efectiva para que vuelvas a liderar tu empresa.',
-    },
-    {
-      id: 5,
-      pain: 'No puedo proyectar el futuro',
-      painDesc:
-        'Sin presupuestos, sin proyecciones, sin un mapa claro de hacia dónde va tu empresa.',
-      solution: 'Asesoramiento financiero y decisiones estratégicas',
-      solutionDesc:
-        'Planificación financiera, presupuestos y análisis de escenarios que convierten la incertidumbre en rumbo claro.',
+        'Sistemas ordenados, flujos digitalizados y control documental que libera tu tiempo para lo que importa.',
     },
   ];
 
