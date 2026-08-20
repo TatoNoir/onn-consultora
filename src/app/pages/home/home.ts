@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CapacitacionSection } from '../../home/capacitacion-section/capacitacion-section';
 import { ContactSection } from '../../home/contact-section/contact-section';
 import { DiagnosticMatrix } from '../../home/diagnostic-matrix/diagnostic-matrix';
 import { EssenceSection } from '../../home/essence-section/essence-section';
@@ -22,7 +21,6 @@ import { Navbar } from '../../layout/navbar/navbar';
     ServicesSection,
     MethodologyTimeline,
     EssenceSection,
-    CapacitacionSection,
     ThermometerQuiz,
     ContactSection,
     Footer,

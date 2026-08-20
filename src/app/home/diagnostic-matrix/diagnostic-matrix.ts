@@ -1,5 +1,6 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, computed, signal } from '@angular/core';
+import { CapacitacionSection } from '../capacitacion-section/capacitacion-section';
 import { RevealDirective } from '../../shared/reveal.directive';
 
 interface Challenge {
@@ -12,7 +13,7 @@ interface Challenge {
 
 @Component({
   selector: 'app-diagnostic-matrix',
-  imports: [RevealDirective],
+  imports: [RevealDirective, CapacitacionSection],
   templateUrl: './diagnostic-matrix.html',
   styleUrl: './diagnostic-matrix.scss',
   animations: [
