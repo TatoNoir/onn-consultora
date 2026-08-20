@@ -34,17 +34,20 @@
           [class.hero__circle--on]="activated()"
           (click)="toggle()"
         >
-          <span class="hero__circle-letter" [class.hero__circle-letter--on]="activated()">Ö</span>
+          <span class="hero__circle-body">
+            <span
+              class="hero__circle-logo"
+              [class.hero__circle-logo--on]="activated()"
+              aria-hidden="true"
+            ></span>
+            <span class="hero__circle-text" [class.hero__circle-text--on]="activated()">
+              <span class="hero__circle-text-brand">ÕNN</span>
+              <span class="hero__circle-text-sub">Empresa Activa</span>
+            </span>
+          </span>
         </div>
 
         <p class="hero__hint">hacé clic para experimentar<br />la transformación</p>
-
-        <div class="hero__pill" (click)="toggle()">
-          <div class="hero__pill-track" [class.hero__pill-track--on]="activated()">
-            <div class="hero__pill-knob" [class.hero__pill-knob--on]="activated()"></div>
-          </div>
-          <span class="hero__pill-label">{{ activated() ? 'ON' : 'OFF' }}</span>
-        </div>
       </div>
     </div>
   </div>

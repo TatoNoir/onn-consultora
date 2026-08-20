@@ -170,19 +170,65 @@
   background: rgba(0, 90, 238, 0.06);
 }
 
-.hero__circle-letter {
-  font-family: var(--font-heading);
-  font-size: 6rem;
-  user-select: none;
-  color: var(--color-amber);
-  transition: color 700ms;
+.hero__circle-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.hero__circle-logo {
+  width: 4.5rem;
+  height: 4.5rem;
+  background-color: var(--color-amber);
+  -webkit-mask-image: url('isotipo_onn-nav.png');
+  mask-image: url('isotipo_onn-nav.png');
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  transition: background-color 700ms;
+  pointer-events: none;
 
   @media (min-width: 768px) {
-    font-size: 8rem;
+    width: 5.5rem;
+    height: 5.5rem;
   }
 }
 
-.hero__circle-letter--on {
+.hero__circle-logo--on {
+  background-color: var(--color-vital-blue);
+}
+
+.hero__circle-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  color: var(--color-amber);
+  transition: color 700ms;
+  user-select: none;
+}
+
+.hero__circle-text-brand {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.hero__circle-text-sub {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.hero__circle-text--on {
   color: var(--color-vital-blue);
 }
 
@@ -192,50 +238,4 @@
   font-family: var(--font-mono);
   text-align: center;
   margin: 0;
-}
-
-.hero__pill {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-  user-select: none;
-}
-
-.hero__pill-track {
-  width: 3rem;
-  height: 1.5rem;
-  border-radius: 9999px;
-  position: relative;
-  background: #d1d5db;
-  transition: background-color 500ms;
-}
-
-.hero__pill-track--on {
-  background: var(--color-vital-blue);
-}
-
-.hero__pill-knob {
-  position: absolute;
-  top: 0.25rem;
-  left: 0.25rem;
-  width: 1rem;
-  height: 1rem;
-  background: #fff;
-  border-radius: 9999px;
-  box-shadow: 0 1px 3px rgb(0 0 0 / 0.15);
-  transition: transform 350ms cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.hero__pill-knob--on {
-  transform: translateX(24px);
-}
-
-.hero__pill-label {
-  font-size: 0.75rem;
-  font-family: var(--font-mono);
-  font-weight: 600;
-  color: #6b7280;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
 }
