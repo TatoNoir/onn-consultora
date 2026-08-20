@@ -25,15 +25,13 @@
 .navbar__brand {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  color: var(--color-ink);
   text-decoration: none;
 }
 
-.navbar__brand-accent {
-  color: var(--color-amber);
+.navbar__brand-logo {
+  height: 3.5rem;
+  width: auto;
+  display: block;
 }
 
 .navbar__nav {
