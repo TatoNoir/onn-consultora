@@ -11,11 +11,11 @@ export class Footer {
 
   protected readonly navLinks = [
     { label: 'Inicio', href: '#hero' },
-    { label: 'Esencia', href: '#diferencia' },
-    { label: 'Diagnóstico', href: '#termometro' },
+    { label: 'Esencia', href: '#esencia' },
+    { label: 'Diagnóstico', href: '#diagnostico' },
     { label: 'Servicios', href: '#servicios' },
     { label: 'Metodología', href: '#metodologia' },
-    { label: 'Sobre mí', href: '#esencia' },
+    { label: 'Sobre mí', href: '#sobre-mi' },
     { label: 'Contacto', href: '#contacto' },
   ];
 
