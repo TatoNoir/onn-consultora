@@ -1,5 +1,5 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-hero-section',
@@ -21,10 +21,4 @@ import { Component, signal } from '@angular/core';
     ]),
   ],
 })
-export class HeroSection {
-  protected readonly activated = signal(false);
-
-  protected toggle(): void {
-    this.activated.update((value) => !value);
-  }
-}
+export class HeroSection {}

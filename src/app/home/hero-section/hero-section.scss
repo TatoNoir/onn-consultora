@@ -149,6 +149,7 @@
   cursor: pointer;
   border: 2px solid var(--color-amber);
   background: rgba(234, 179, 8, 0.04);
+  text-decoration: none;
   transition: border-color 700ms, background 700ms, transform 250ms;
 
   @media (min-width: 768px) {
@@ -158,16 +159,12 @@
 
   &:hover {
     transform: scale(1.04);
+    
   }
 
   &:active {
     transform: scale(0.96);
   }
-}
-
-.hero__circle--on {
-  border-color: var(--color-vital-blue);
-  background: rgba(0, 90, 238, 0.06);
 }
 
 .hero__circle-body {
@@ -198,10 +195,6 @@
   }
 }
 
-.hero__circle-logo--on {
-  background-color: var(--color-vital-blue);
-}
-
 .hero__circle-text {
   display: flex;
   flex-direction: column;
@@ -226,10 +219,6 @@
   line-height: 1;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-}
-
-.hero__circle-text--on {
-  color: var(--color-vital-blue);
 }
 
 .hero__hint {
