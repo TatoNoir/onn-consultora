@@ -47,6 +47,9 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid #e5e7eb;
 
   @media (min-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
@@ -258,9 +261,7 @@
 }
 
 .diagnostic__situations {
-  margin-top: 4rem;
-  padding-top: 3rem;
-  border-top: 1px solid #e5e7eb;
+  margin-top: 0;
 }
 
 .diagnostic__situations-title {
