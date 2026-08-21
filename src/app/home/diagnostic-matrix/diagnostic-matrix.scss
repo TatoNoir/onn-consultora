@@ -57,6 +57,15 @@
   }
 }
 
+.diagnostic__list-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.diagnostic__list-col .diagnostic__title {
+  margin-bottom: 1.5rem;
+}
+
 .diagnostic__list {
   display: flex;
   flex-direction: column;

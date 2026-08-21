@@ -2,15 +2,12 @@
   <div class="diagnostic__inner">
     <div class="diagnostic__header reveal" appReveal>
       <p class="diagnostic__eyebrow">ÕNN ES PARA VOS SI…</p>
-      <h2 class="diagnostic__title">
-        ¿Cuál es tu <span class="diagnostic__title-accent">desafío</span> hoy?
-      </h2>
     </div>
 
     <div class="diagnostic__situations">
       <h3 class="diagnostic__situations-title reveal" appReveal>
-        ¿Te identificás con alguna de estas
-        <span class="diagnostic__title-accent">situaciones</span>?
+        Te identificás con alguna de estas
+        <span class="diagnostic__title-accent">situaciones</span>
       </h3>
 
       <div class="diagnostic__situations-layout">
@@ -96,7 +93,12 @@
     </div>
 
     <div class="diagnostic__grid">
-      <div class="diagnostic__list">
+      <div class="diagnostic__list-col">
+        <h2 class="diagnostic__title reveal" appReveal>
+          ¿Cuál es tu <span class="diagnostic__title-accent">desafío</span> hoy?
+        </h2>
+
+        <div class="diagnostic__list">
         @for (challenge of challenges; track challenge.id; let i = $index) {
           <div class="diagnostic__row reveal" appReveal [style.transition-delay]="i * 80 + 'ms'">
             <button
@@ -183,6 +185,7 @@
             </button>
           </div>
         }
+        </div>
       </div>
 
       <div class="diagnostic__detail">
