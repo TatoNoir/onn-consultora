@@ -29,7 +29,7 @@ interface NavItem {
 export class Navbar {
   protected readonly navItems: NavItem[] = [
     { label: 'Inicio', href: '#hero' },
-    { label: 'Esencia', href: '#esencia' },
+    { label: 'Enfoque', href: '#enfoque' },
     { label: 'Diagnóstico', href: '#diagnostico' },
     { label: 'Servicios', href: '#servicios' },
     { label: 'Metodología', href: '#metodologia' },

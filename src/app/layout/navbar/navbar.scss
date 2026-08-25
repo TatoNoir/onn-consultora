@@ -58,28 +58,17 @@
   }
 }
 
-.navbar__cta {
+.navbar__location {
   display: none;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1.25rem;
-  border-radius: 0.25rem;
-  background: var(--color-vital-blue);
-  color: #fff;
   font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--color-vital-blue);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-family: var(--font-mono);
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 200ms;
+  margin: 0;
 
   @media (min-width: 1024px) {
-    display: inline-flex;
-  }
-
-  &:hover {
-    background: var(--color-vital-blue-dark);
+    display: block;
   }
 }
 

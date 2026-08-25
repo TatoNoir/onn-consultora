@@ -49,9 +49,8 @@
 
 .footer__brand-mark {
   position: absolute;
-  font-family: var(--font-heading);
-  font-size: 2.25rem;
-  color: var(--color-amber);
+  height: 2rem;
+  width: auto;
   transition: opacity 300ms;
 }
 
